@@ -30,22 +30,3 @@ def user_input_features():
 df = user_input_features()
 
 # Leer datos comprimidos
-afluencia = pd.read_csv("afluencia_limpio.csv.gz", encoding='latin-1')
-X = afluencia.drop(columns='afluencia')
-Y = afluencia['afluencia']
-
-# Entrenar modelo de regresión (puedes guardarlo luego con joblib)
-regressor = DecisionTreeRegressor(criterion='squared_error',   # error cuadrático para regresión
-    max_depth=7,                 # limita profundidad
-    min_samples_split=10,        # mínimo para dividir un nodo
-    min_samples_leaf=4,          # mínimo en cada hoja
-    max_leaf_nodes=20,           # limita número de hojas
-    ccp_alpha=0.005,             # poda ligera
-    random_state=0
-regressor.fit(X, Y)
-
-# Predicción numérica exacta
-prediction = regressor.predict(df)
-
-st.subheader('Predicción')
-st.metric(label="Afluencia estimada", value=int(prediction[0]))

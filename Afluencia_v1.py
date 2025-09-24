@@ -1,8 +1,8 @@
 import numpy as np
 import streamlit as st
 import pandas as pd
+from sklearn import datasets
 from sklearn.tree import DecisionTreeRegressor
-import joblib
 
 st.write(''' Predicción de afluencia en el Sistema de Transporte Colectivo Metro de la Ciudad de México ''')
 st.image("metroo.png", caption="Afluencia en el STC Metro.")

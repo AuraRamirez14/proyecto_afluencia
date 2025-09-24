@@ -39,7 +39,7 @@ def user_input_features():
 df = user_input_features()
 
 #afluencia =  pd.read_csv('afluencia_limpio.csv', encoding='latin-1')
-afluencia = pd.read_csv("datos.csv.gz", encoding='latin-1')
+afluencia = pd.read_csv("afluencia_limpio.csv.gz", encoding='latin-1')
 X = afluencia.drop(columns='afluencia')
 Y = afluencia['afluencia']
 

@@ -43,7 +43,7 @@ afluencia = pd.read_csv("afluencia_limpio.csv.gz", encoding='latin-1')
 X = afluencia.drop(columns='afluencia')
 Y = afluencia['afluencia']
 
-classifier = DecisionTreeClassifier(min_samples_leaf=4, min_samples_split=10, random_state=0)
+classifier = DecisionTreeRegressor(min_samples_leaf=4, min_samples_split=10, random_state=0)
 classifier.fit(X, Y)
 
 prediction = classifier.predict(df)

@@ -51,3 +51,4 @@ prediction_probabilities = classifier.predict_proba(df)
 
 st.subheader('Predicción')
 st.write('Dadas las variables que se seleccionaron, la afluencia predicha es:', prediction)
+st.metric(label="Afluencia estimada", value=int(prediction[0]))

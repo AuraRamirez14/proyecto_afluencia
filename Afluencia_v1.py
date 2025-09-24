@@ -17,7 +17,7 @@ def user_input_features():
   # Entrada
   anio = st.number_input('Año(yyyy):', min_value=2010, max_value=2025, value = 2020, step = 1)
   codificacion_mes = st.number_input('Mes:', min_value=1, max_value=12, value = 1, step = 1)
-  diaSemana = st.number_input('Día de la semana:', min_value=7, max_value=1, value = 1, step = 1)
+  diaSemana = st.number_input('Día de la semana:', min_value=1, max_value=7, value = 1, step = 1)
   #esFestivo = st.number_input('Dia que marca si fue festivo:', min_value=0, max_value=1, value = 0, step = 1)
   #puntoInteres = st.number_input('Existe algún punto de interés:',min_value=0, max_value=10, value = 0, step = 1)
   codificacion_linea = st.number_input('Linea:', min_value=1, max_value=12, value = 1, step = 1)

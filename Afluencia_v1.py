@@ -30,3 +30,4 @@ def user_input_features():
 df = user_input_features()
 
 # Leer datos comprimidos
+afluencia = pd.read_csv("afluencia_limpio.csv.gz", encoding='latin-1')

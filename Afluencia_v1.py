@@ -35,7 +35,13 @@ X = afluencia.drop(columns='afluencia')
 Y = afluencia['afluencia']
 
 # Entrenar modelo de regresión (puedes guardarlo luego con joblib)
-regressor = DecisionTreeRegressor(min_samples_leaf=4, min_samples_split=10, random_state=0)
+regressor = DecisionTreeRegressor(criterion='squared_error',   # error cuadrático para regresión
+    max_depth=7,                 # limita profundidad
+    min_samples_split=10,        # mínimo para dividir un nodo
+    min_samples_leaf=4,          # mínimo en cada hoja
+    max_leaf_nodes=20,           # limita número de hojas
+    ccp_alpha=0.005,             # poda ligera
+    random_state=0
 regressor.fit(X, Y)
 
 # Predicción numérica exacta
